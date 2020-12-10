@@ -94,5 +94,5 @@ theme: nexmoe
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@106.75.87.172:/home/git/reois/blog.git
+  repo: git@gitea.bluepoor.com:10020/gitea-zhan/hexo-bolg.git
   branch: master
