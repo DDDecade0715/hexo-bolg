@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>常见的设计模式（一） - bluePoor</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="感受灵魂冲击吧！">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="http://image.bluepoor.com/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200812101736.jpg" type="image/png" />
+  <meta name="description" content="策略模式策略模式是对象的行为模式，用意是对一组算法的封装。动态的选择需要的算法并使用。 策略模式指的是程序中涉及决策控制的一种模式。策略模式功能非常强大，因为这个设计模式本身的核心思想就是面向对象编程的多形性思想。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见的设计模式（一）">
+<meta property="og:url" content="https://blog.bluepoor.com/2020/08/10/CL.html/index.html">
+<meta property="og:site_name" content="bluePoor">
+<meta property="og:description" content="策略模式策略模式是对象的行为模式，用意是对一组算法的封装。动态的选择需要的算法并使用。 策略模式指的是程序中涉及决策控制的一种模式。策略模式功能非常强大，因为这个设计模式本身的核心思想就是面向对象编程的多形性思想。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-10T03:54:16.000Z">
+<meta property="article:modified_time" content="2020-09-22T07:39:05.241Z">
+<meta property="article:author" content="DDDecade0715">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1613636489099">-->
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(http://image.bluepoor.com/images/78552291_p0_master1200.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="DDDecade0715" class="mdui-btn mdui-btn-icon"><img src="http://image.bluepoor.com/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200812101736.jpg" alt="DDDecade0715"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="DDDecade0715">
+            <img src="http://image.bluepoor.com/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200812101736.jpg" alt="DDDecade0715" alt="DDDecade0715">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>5</div>
+        <div><span>标签</span>1</div>
+        <div><span>分类</span>1</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=blog.bluepoor.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/DDDecade0715" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/PHP/">PHP</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 DDDecade0715
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 68.51851851851852%;"> 
+          <img data-src="http://image.bluepoor.com/images/64616515_p0_master1200.jpg" data-sizes="auto" alt="常见的设计模式（一）" class="lazyload">
+          <h1>常见的设计模式（一）</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年08月10日</a>
+    <a><i class="nexmoefont icon-areachart"></i>396 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p>策略模式是对象的行为模式，用意是对一组算法的封装。动态的选择需要的算法并使用。</p>
+<p>策略模式指的是程序中涉及决策控制的一种模式。策略模式功能非常强大，因为这个设计模式本身的核心思想就是面向对象编程的多形性思想。</p>
+<a id="more"></a>
+
+<h2 id="策略模式的三个角色："><a href="#策略模式的三个角色：" class="headerlink" title="策略模式的三个角色："></a>策略模式的三个角色：</h2><p>1．抽象策略角色<br>2．具体策略角色<br>3．环境角色（对抽象策略角色的引用）</p>
+<h2 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h2><p>1．定义抽象角色类（定义好各个实现的共同抽象方法）<br>2．定义具体策略类（具体实现父类的共同方法）<br>3．定义环境角色类（私有化申明抽象角色变量，重载构造方法，执行抽象方法）  </p>
+<p>具体点来说，假设我是一个上班狗，每天上班都有几个方案：扫骑行单车、乘坐公交车、开小车、乘坐地铁等途径。使用不同策略不同的资源得到相同的结果。</p>
+<pre><code class="bash">&lt;?php
+
+/**
+ * 定义抽象类
+ *
+ * Class Person
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+abstract class Person
+{
+    abstract public function job();
+}
+
+/**
+ * 使用单车
+ *
+ * Class Bicycle
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+class Bicycle extends Person
+{
+    public function job()
+    {
+        return &#39;Bicycle to job&#39;;
+    }
+}
+
+/**
+ * 使用小车
+ *
+ * Class Car
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+class Car extends Person
+{
+    public function job()
+    {
+        return &#39;Car to job&#39;;
+    }
+}
+
+/**
+ * 使用地铁
+ *
+ * Class Metro
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+class Metro extends Person
+{
+    public function job()
+    {
+        return &#39;Metro to job&#39;;
+    }
+}
+
+/**
+ * 实际使用的交通工具
+ *
+ * Class Action
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+class Action
+{
+    public function selectChange(Person $person)
+    {
+        return $person-&gt;job();
+    }
+}
+
+$actionClass = new Action();
+$result      = $actionClass-&gt;selectChange(new Metro());</code></pre>
+
+  </article>
+
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/PHP/">PHP</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>DDDecade0715<br>
+    <strong>本文链接：</strong><a href="https://blog.bluepoor.com/2020/08/10/CL.html/" title="https:&#x2F;&#x2F;blog.bluepoor.com&#x2F;2020&#x2F;08&#x2F;10&#x2F;CL.html&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;blog.bluepoor.com&#x2F;2020&#x2F;08&#x2F;10&#x2F;CL.html&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: '8Nl76a7ENkwkpHwcGGNG9uY1-gzGzoHsz',
+        appKey: 'e7h8Bf2ny3UeWuguUMCIchne'
+    })
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+<script src="/js/app.js?v=1613636489101"></script>
+  
+
+
+
+
+
+</body>
+
+</html>
