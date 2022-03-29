@@ -1,0 +1,40 @@
+######## Sidebar ########
+sidebar:
+  logo:
+    avatar: '[config.avatar](/about/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
+    title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
+  menu:
+    post: '[btn.blog](/)'
+    wiki: '[btn.wiki](/wiki/index.html)'
+    friends: '[友链](/friend/index.html)'
+    about: '[关于](/about/index.html)'
+  # Sidebar widgets
+  widget_layout:
+    index: [welcome, recent] # for home/wiki/categories/tags/archives/404 pages
+    page: [welcome, toc] # for pages using 'layout:page'
+    post: [toc, repo_info] # for pages using 'layout:post'
+    wiki: [toc, repo_info, wiki_more] # for pages using 'layout:wiki'
+  widgets:
+    # Recent update
+    recent:
+      layout: recent
+      rss: # /atom.xml # npm i hexo-generator-feed
+      limit: 5 # Count of posts
+    # TOC (valid only in layout:post/wiki)
+    toc:
+      layout: toc
+      list_number: false
+      min_depth: 2
+      max_depth: 5
+      fallback: recent # Use a backup widget when toc does not exist.
+    # welcome
+    welcome:
+      layout: markdown
+      title: '欢迎，旅行者：'
+      content: | # support markdown
+        每个人心中都有一团火，路过的人只看到烟
+
+comments:
+  service: beaudar
+  beaudar:
+    repo: DDDecade0715/blog-comment

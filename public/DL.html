@@ -4,7 +4,7 @@
 <head>
   <meta name="generator" content="Hexo 5.4.1">
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,follow">
+  
 
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -17,15 +17,20 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>归档 - BLOG.ZHAN</title>
+  <title>常见的设计模式（三） - BLOG.ZHAN</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://localhost:4000/archives/2020/08/">
+    <meta name="description" content="单例模式单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。 单例模式是一种常见的设计模式，在计算机系统中，线程池、缓存、日志对象、对话框、打印机、数据库操作、显卡的驱动程序常被设计成单例。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见的设计模式（三）">
+<meta property="og:url" content="http://localhost:4000/DL.html">
 <meta property="og:site_name" content="BLOG.ZHAN">
+<meta property="og:description" content="单例模式单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。 单例模式是一种常见的设计模式，在计算机系统中，线程池、缓存、日志对象、对话框、打印机、数据库操作、显卡的驱动程序常被设计成单例。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-21T04:38:44.000Z">
+<meta property="article:modified_time" content="2022-03-17T10:16:58.506Z">
 <meta property="article:author" content="zhan">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
   
   
@@ -49,7 +54,7 @@
 
 
   <div class='l_body' id='start'>
-    <aside class='l_left' layout=''>
+    <aside class='l_left' layout='post'>
     
 
 
@@ -59,160 +64,128 @@
 <nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/friend/">友链</a><a class="nav-item" href="/about/">关于</a></nav></header>
 
 <div class="widgets">
-<div class="widget-wrap" id="markdown"><div class="widget-header cap dis-select"><span class="name">欢迎</span></div><div class="widget-body fs14"><p>每个人心中都有一团火，路过的人只看到烟</p>
-</div></div>
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="line"></div><a class="more-item" href="/ZC.html"><div class="cap"><time>2022-03-17</time><span>PHP</span></div><span class="title">常见的实际模式（四）</span></a><div class="line"></div><a class="more-item" href="/CL.html"><div class="cap"><time>2022-03-17</time><span>PHP</span></div><span class="title">常见的设计模式（一）</span></a><div class="line"></div><a class="more-item" href="/GC.html"><div class="cap"><time>2022-03-17</time><span>PHP</span></div><span class="title">常见的设计模式（二）</span></a><div class="line"></div><a class="more-item" href="/DL.html"><div class="cap"><time>2022-03-17</time><span>PHP</span></div><span class="title">常见的设计模式（三）</span></a><div class="line"></div><a class="more-item" href="/HW.html"><div class="cap"><time>2022-03-17</time></div><span class="title">Hello World</span></a></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></div>
+
+
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only">
-
-<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://avatars.githubusercontent.com/u/29270630?s=400&u=4dad6f5a0fb49ec5e7df6dcea313563cd4ef16aa&v=4" onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main">BLOG.ZHAN</div><div class="sub normal cap">石皮立占</div><div class="sub hover cap" style="opacity:0">github.com/DDDecade0715</div></a></div>
-</header>
-
-
 
       
 
-  
-  <div class='nav-wrap'>
-  <nav class='sub post cap'>
-    
-      <a href='/'>近期发布</a>
-    
-    
-      
-        <a href='/categories'>分类</a>
-      
-    
-    
-      
-        <a href='/tags'>标签</a>
-      
-    
-    
-      
-        <a class='active' href='/archives'>归档</a>
-      
-    
-  </nav>
-</div>
 
-  <div class='post-list'>
-  	
-  	
-  		
-  		
-  			
-  		
-  	
-  		
-  		
-  			
-  		
-  	
-  		
-  		
-  	
-  		
-  		
-  	
-  		
-  		
-  	
-  	
-  		<article class='' id='archive'>
-  			<div class='archive-header h4'>2022</div>
-  			
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				<div class='archive-list'>
-            <a class='post fs14' href="/HW.html">
-    					<time>03-16</time>
-    					<span>
-                
-      						Hello World
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  		</article>
-  	
-  		<article class='' id='archive'>
-  			<div class='archive-header h4'>2020</div>
-  			
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				
-  		    
-  				<div class='archive-list'>
-            <a class='post fs14' href="/ZC.html">
-    					<time>08-25</time>
-    					<span>
-                
-      						常见的实际模式（四）
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/DL.html">
-    					<time>08-21</time>
-    					<span>
-                
-      						常见的设计模式（三）
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/GC.html">
-    					<time>08-21</time>
-    					<span>
-                
-      						常见的设计模式（二）
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  				<div class='archive-list'>
-            <a class='post fs14' href="/CL.html">
-    					<time>08-10</time>
-    					<span>
-                
-      						常见的设计模式（一）
-      					
-              </span>
-    				</a>
-          </div>
-  			
-  		</article>
-  	
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PHP/">PHP</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-08-21T04:38:44.000Z">2020-08-21</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>常见的设计模式（三）</span></h1>
+<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
+<p>单例模式是一种常见的设计模式，在计算机系统中，线程池、缓存、日志对象、对话框、打印机、数据库操作、显卡的驱动程序常被设计成单例。</p>
+<span id="more"></span>
+
+<p>单例模式分3种：懒汉式单例、饿汉式单例、登记式单例。</p>
+<p>单例模式有以下3个特点：</p>
+<p>1．只能有一个实例。<br>2．必须自行创建这个实例。<br>3．必须给其他对象提供这一实例。  </p>
+<p>那么为什么要使用PHP单例模式？<br>PHP一个主要应用场合就是应用程序与数据库打交道的场景，在一个应用中会存在大量的数据库操作，针对数据库句柄连接数据库的行为，使用单例模式可以避免大量的new操作。因为每一次new操作都会消耗系统和内存的资源。</p>
+<pre><code class="php">&lt;?php
+
+/**
+ * Class Single
+ *
+ * @author yingzhan &lt;519203699@qq.com&gt;
+ */
+class Single
+&#123;
+    /**
+     * 声明一个私有的实例变量
+     *
+     * @var
+     */
+    private $name;
+
+    /**
+     * 声明一个静态变量（保存在类中唯一的一个实例）
+     *
+     * @var
+     */
+    public static $instance;
+
+    /**
+     * 声明私有构造方法为了防止外部代码使用new来创建对象.
+     *
+     * Single constructor.
+     */
+    private function __construct()
+    &#123;
+
+    &#125;
+
+    /**
+     * 声明一个getInstance()静态方法，用于检测是否有实例对象
+     *
+     * @return Single
+     */
+    public static function getInstance()
+    &#123;
+        if (!self::$instance) &#123;
+            self::$instance = new self();
+        &#125;
+
+        return self::$instance;
+    &#125;
+
+    public function setName($name)
+    &#123;
+        $this-&gt;name = $name;
+    &#125;
+
+    public function getName()
+    &#123;
+        return $this-&gt;name;
+    &#125;
+&#125;
+
+$singleOne = Single::getInstance();
+
+$singleTwo = Single::getInstance();
+
+$singleOne-&gt;setName(&#39;Decade&#39;);
+$singleTwo-&gt;setName(&#39;Zio&#39;);
+
+echo $singleOne-&gt;getName();
+echo &#39;&lt;br&gt;&#39;;
+echo $singleTwo-&gt;getName();</code></pre>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/GC.html">常见的设计模式（二）<span class="note">较早</span></a><div class="line"></div><a id="prev" href="/ZC.html">常见的实际模式（四）<span class="note">较新</span></a></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="DDDecade0715/blog-comment" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </div>
   </div>
+
 
 
       

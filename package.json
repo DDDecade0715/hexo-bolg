@@ -9,10 +9,10 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.1"
+    "version": "5.4.1"
   },
   "dependencies": {
-    "hexo": "^4.2.1",
+    "hexo": "^5.4.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
@@ -22,6 +22,7 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
+    "hexo-theme-stellar": "^1.6.1",
     "hexo-wordcount": "^2.0.1"
   }
 }
